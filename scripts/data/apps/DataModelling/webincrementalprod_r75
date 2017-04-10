@@ -1,0 +1,77 @@
+:targets:
+  - :name:   "proddb"   # Insert your own name to identify the database
+    :type:     redshift
+    :host:   iedup-udmd-redshift.crmnvoqoidiu.eu-west-1.redshift.amazonaws.com   # Insert Redshfit host
+    :database: udmddb # Insert database name
+    :port:    5439 # Insert database port
+    :username: udmddbadmin   # Insert username with relevant credentials to run the below queries
+    :password: Fyf5Kuh8%wtSfd4Q # Insert user password
+:steps:
+  - :name: 09-cleanup
+    :queries:
+      - :name: 09-cleanup
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/09-cleanup/09-01-cleanup.sql
+  - :name: 10-vacuumaftercleanup
+    :queries:
+      - :name: 10-vacuumaftercleanup
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/07-vacuum/07-vacuum-aftercleanup.sql
+  - :name: 00-preparation
+    :queries:
+      - :name: 00-preparation
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/00-preparation/00-preparation.sql
+  - :name: 01-id-stitching
+    :queries:
+      - :name: 01-id-stitching
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/01-id-stitching/01-id-stitching.sql
+  - :name: 02-events
+    :queries:
+      - :name: 02-events
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/02-events/02-events.sql
+  - :name: 03-new
+    :queries:
+      - :name: 03-01-sessions
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/03-new/03-01-sessions.sql
+  - :name: 03-new
+    :queries:
+      - :name: 03-02-visitors
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/03-new/03-02-visitors.sql
+  - :name: 03-new
+    :queries:
+      - :name: 03-03-page-views
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/03-new/03-03-page-views.sql
+  - :name: 04-move-to-new
+    :queries:
+      - :name: 04-01-sessions
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/04-move-to-new/04-01-sessions.sql
+  - :name: 04-move-to-new
+    :queries:
+      - :name: 04-02-visitors
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/04-move-to-new/04-02-visitors.sql
+  - :name: 04-move-to-new
+    :queries:
+      - :name: 04-03-page-views
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/04-move-to-new/04-03-page-views.sql
+  - :name: 05-aggregate
+    :queries:
+      - :name: 05-01-sessions
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/05-aggregate/05-01-sessions.sql
+  - :name: 05-aggregate
+    :queries:
+      - :name: 05-02-visitors
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/05-aggregate/05-02-visitors.sql
+  - :name: 05-aggregate
+    :queries:
+      - :name: 05-03-page-views
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/05-aggregate/05-03-page-views.sql
+  - :name: 06-commit
+    :queries:
+      - :name: 06-commit
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/06-commit/06-commit.sql
+  - :name: 07-vacuum
+    :queries:
+      - :name: 07-vacuum
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/07-vacuum/07-vacuum.sql
+  - :name: 08-track-queries
+    :queries:
+      - :name: 08-track-queries
+        :file: ../SnowplowRealeases/r75/snowplow-master/5-data-modeling/sql-runner/redshift/sql/web-incremental/08-track-queries/08-track-queries.sql
