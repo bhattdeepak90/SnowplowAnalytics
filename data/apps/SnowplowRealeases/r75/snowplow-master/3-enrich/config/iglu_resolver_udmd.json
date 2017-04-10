@@ -1,0 +1,78 @@
+{
+  "schema": "iglu:com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-0",
+  "data": {
+    "cacheSize": 500,
+    "repositories": [
+      {
+        "name": "Iglu Central",
+        "priority": 0,
+        "vendorPrefixes": [ "com.snowplowanalytics" ],
+        "connection": {
+          "http": {
+            "uri": "http://iglucentral.com"
+          }
+        }
+      } ,
+          {
+        "name": "UDMD Repository",
+        "priority": 0,
+        "vendorPrefixes": [ "udmd.unileversolutions" ],
+        "connection": {
+          "http": {
+            "uri": "http://s3-eu-west-1.amazonaws.com/udmd-p-schemas"
+          }
+                }
+      } ,
+          {
+        "name": "UDMD Repository",
+        "priority": 0,
+        "vendorPrefixes": [ "udmd.videocomponent" ],
+        "connection": {
+          "http": {
+            "uri": "http://s3-eu-west-1.amazonaws.com/udmd-p-schemas"
+          }
+                }
+      } ,
+      {
+        "name": "UDMD Repository",
+        "priority": 0,
+        "vendorPrefixes": [ "udmd.product" ],
+        "connection": {
+          "http": {
+            "uri": "http://s3-eu-west-1.amazonaws.com/udmd-p-schemas"
+          }
+                }
+      } ,
+      {
+        "name": "UDMD Repository",
+        "priority": 0,
+        "vendorPrefixes": [ "udmd.event" ],
+        "connection": {
+          "http": {
+            "uri": "http://s3-eu-west-1.amazonaws.com/udmd-p-schemas"
+          }
+                }
+      } ,
+      {
+        "name": "UDMD Repository",
+        "priority": 0,
+        "vendorPrefixes": [ "udmd.promotion" ],
+        "connection": {
+          "http": {
+            "uri": "http://s3-eu-west-1.amazonaws.com/udmd-p-schemas"
+          }
+                }
+      } ,
+      {
+        "name": "UDMD Repository",
+        "priority": 0,
+        "vendorPrefixes": [ "udmd.page" ],
+        "connection": {
+          "http": {
+            "uri": "http://s3-eu-west-1.amazonaws.com/udmd-p-schemas"
+          }
+                }
+      }
+    ]
+  }
+}
