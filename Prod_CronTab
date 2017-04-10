@@ -1,0 +1,14 @@
+AWS_CONFIG_FILE="/home/ubuntu/.aws/config"
+SHELL=/bin/bash
+
+30 02 * * *      /data/apps/scripts/UDMD_r64_r75.sh
+#02 10 * * *     /data/apps/scripts/UDMD_r64_r75_onlyetl.sh
+#40 10 * * *     /data/apps/scripts/UDMD_r64_r75_norawlogs.sh
+23 10 * * Thu    /data/apps/scripts/cleanup_modelling_r75.sh
+#*/1 * * * *     /data/apps/scripts/b_job.sh
+#*/1 * * * *     /usr/local/bin/aws s3 ls >> /data/apps/logs/UDMD/shilpi
+#03 07 * * *     /data/apps/scripts/UDMD_r64_r75_copy.sh
+#20 07 * * Thu   /data/apps/scripts/cleanup_modelling_r75.sh
+#25 07 * * *     /data/apps/scripts/UDMD_r64_r75.sh
+00 08 * * Sun    /data/apps/scripts/maxmind_db_update.sh
+00 11 * * *      /data/apps/scripts/server_backup.sh
