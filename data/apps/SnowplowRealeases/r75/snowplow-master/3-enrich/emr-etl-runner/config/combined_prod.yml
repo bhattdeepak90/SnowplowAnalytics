@@ -1,7 +1,7 @@
 aws:
   # Credentials can be hardcoded or set in environment variables
-  access_key_id: AKIAINTCJU27MPRPEQ4A
-  secret_access_key: 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
+  access_key_id: XXXXXXXXXXXXXXXXX
+  secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXX
   s3:
     region: eu-west-1
     buckets:
